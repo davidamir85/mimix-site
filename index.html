@@ -7,14 +7,14 @@
   <meta name="description" content="Mimix uses AI to interview your people, align different versions of a process, and produce a single, actionable view. Start with one process." />
   <style>
     :root {
-      --green: #018b5f;          /* main brand green */
+      --green: #018b5f;
       --green-dark: #006b48;
       --green-soft: rgba(1,139,95,0.08);
-      --yellow: #f5c400;         /* highlight */
+      --yellow: #f5c400;
       --text: #0f172a;
       --muted: #5f6b80;
       --border: #e2e8f0;
-      --max: 1200px;             /* a bit wider */
+      --max: 1200px;
       --radius: 16px;
     }
 
@@ -26,14 +26,14 @@
       background: #ffffff;
       color: var(--text);
       line-height: 1.6;
-      font-size: 18px;            /* <<< bigger base */
+      font-size: 18px;
     }
 
     /* HEADER */
     header {
       position: sticky;
       top: 0;
-      background: var(--green);   /* <<< solid green */
+      background: var(--green);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(0,0,0,0.1);
       z-index: 10;
@@ -46,18 +46,38 @@
       justify-content: space-between;
       gap: 1.1rem;
       padding: 0.65rem 1.4rem;
-      min-height: 74px;           /* taller */
+      min-height: 74px;
     }
-    .logo {
+    /* text logo instead of image */
+    .brand {
       display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .brand-name {
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.01em;
+      font-size: 1.55rem;
+      display: inline-flex;
       align-items: center;
-      gap: .6rem;
+      gap: 0.35rem;
     }
-    .logo-img {
-      height: 66px;               /* <<< MUCH bigger logo */
-      width: auto;
-      display: block;
+    .brand-name::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--yellow);
+      border-radius: 999px;
+      display: inline-block;
     }
+    .brand-bar {
+      width: 70px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 999px;
+    }
+
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
@@ -91,17 +111,17 @@
       margin: 0 auto;
       padding: 4.3rem 1.4rem 4.3rem;
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;  /* image gets more space */
+      grid-template-columns: 0.8fr 1.2fr;
       gap: 3.6rem;
       align-items: center;
-      min-height: calc(100vh - 74px);      /* fill screen minus header */
+      min-height: calc(100vh - 74px);
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      background: rgba(255,255,255,0.4);
-      border: 1px solid rgba(1,139,95,0.2);
+      background: rgba(1,139,95,0.07);
+      border: 1px solid rgba(1,139,95,0.15);
       color: var(--green-dark);
       border-radius: 999px;
       padding: 0.35rem 1.05rem;
@@ -118,7 +138,7 @@
       display: inline-block;
     }
     h1 {
-      font-size: clamp(3rem, 5vw, 3.7rem); /* <<< bigger hero text */
+      font-size: clamp(3rem, 5vw, 3.7rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
       margin-bottom: 1.3rem;
@@ -152,7 +172,7 @@
       justify-content: flex-end;
     }
     .hero-illustration {
-      max-width: 700px;       /* <<< BIGGER image */
+      max-width: 700px;
       width: 100%;
       height: auto;
       border-radius: 26px;
@@ -171,6 +191,7 @@
       letter-spacing: -0.01em;
     }
     .muted { color: var(--muted); }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -184,7 +205,27 @@
       border-radius: 16px;
       padding: 1.25rem 1.25rem 1.1rem;
       box-shadow: 0 14px 35px rgba(15,23,42,0.02);
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Colored icons for cards */
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    /* specific colors */
+    .icon-knowledge { background: #f97316; }    /* orange */
+    .icon-versions { background: #0f766e; }     /* green-teal */
+    .icon-improve  { background: #2563eb; }     /* blue */
 
     footer {
       max-width: var(--max);
@@ -211,8 +252,8 @@
         max-width: 100%;
       }
       .nav-links { display: none; }
-      .logo-img { height: 58px; }
-      body { font-size: 16px; } /* small safety */
+      body { font-size: 16px; }
+      .brand-name { font-size: 1.35rem; }
     }
   </style>
 </head>
@@ -220,8 +261,9 @@
 
   <header>
     <div class="nav">
-      <div class="logo">
-        <img src="WebsiteLogo.png" alt="Mimix" class="logo-img">
+      <div class="brand">
+        <span class="brand-name">mimix</span>
+        <span class="brand-bar"></span>
       </div>
       <div class="nav-links">
         <a href="#problem">Problem</a>
@@ -265,14 +307,17 @@
       </p>
       <div class="grid-3">
         <div class="card">
+          <div class="card-icon icon-knowledge">K</div>
           <h3>Knowledge is trapped</h3>
           <p class="muted">People know how they work, but it’s not captured in a usable, structured way.</p>
         </div>
         <div class="card">
+          <div class="card-icon icon-versions">V</div>
           <h3>Many versions, no truth</h3>
           <p class="muted">Finance says one thing, ops another. Mimix reconciles them automatically.</p>
         </div>
         <div class="card">
+          <div class="card-icon icon-improve">→</div>
           <h3>Can’t improve what you can’t see</h3>
           <p class="muted">Without an agreed as-is, automation and optimisation stay theoretical.</p>
         </div>
