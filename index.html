@@ -8,12 +8,13 @@
   <style>
     :root {
       --green: #018b5f;          /* main brand green */
+      --green-dark: #006b48;
       --green-soft: rgba(1,139,95,0.08);
       --yellow: #f5c400;         /* highlight */
       --text: #0f172a;
-      --muted: #64748b;
+      --muted: #5f6b80;
       --border: #e2e8f0;
-      --max: 1180px;             /* a bit wider now */
+      --max: 1200px;             /* a bit wider */
       --radius: 16px;
     }
 
@@ -25,15 +26,16 @@
       background: #ffffff;
       color: var(--text);
       line-height: 1.6;
+      font-size: 18px;            /* <<< bigger base */
     }
 
     /* HEADER */
     header {
       position: sticky;
       top: 0;
-      background: linear-gradient(90deg, rgba(1,139,95,0.12) 0%, rgba(255,255,255,0.95) 55%);
+      background: var(--green);   /* <<< solid green */
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(1, 139, 95, 0.12);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
       z-index: 10;
     }
     .nav {
@@ -43,8 +45,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 1.1rem;
-      padding: 0.5rem 1.25rem;
-      min-height: 68px;
+      padding: 0.65rem 1.4rem;
+      min-height: 74px;           /* taller */
     }
     .logo {
       display: flex;
@@ -52,31 +54,31 @@
       gap: .6rem;
     }
     .logo-img {
-      height: 56px;          /* bigger logo */
+      height: 66px;               /* <<< MUCH bigger logo */
       width: auto;
       display: block;
     }
     .nav-links a {
-      color: var(--text);
+      color: #ffffff;
       text-decoration: none;
       margin-left: 1.25rem;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 500;
     }
     .nav-links a:hover {
-      color: var(--green);
+      opacity: 0.85;
     }
     .btn-primary {
-      background: var(--green);
-      color: #fff;
+      background: #ffffff;
+      color: var(--green-dark);
       border: none;
       border-radius: 999px;
-      padding: 0.55rem 1.3rem;
+      padding: 0.55rem 1.4rem;
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
       font-size: 0.9rem;
-      box-shadow: 0 10px 30px rgba(1, 139, 95, 0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       white-space: nowrap;
     }
     .btn-primary:hover {
@@ -87,24 +89,24 @@
     .hero {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4.3rem 1.25rem 3.8rem;
+      padding: 4.3rem 1.4rem 4.3rem;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;  /* image gets more space */
-      gap: 3.5rem;
+      grid-template-columns: 0.8fr 1.2fr;  /* image gets more space */
+      gap: 3.6rem;
       align-items: center;
-      min-height: 88vh;
+      min-height: calc(100vh - 74px);      /* fill screen minus header */
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      background: var(--green-soft);
-      border: 1px solid rgba(1,139,95,0.18);
-      color: var(--green);
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(1,139,95,0.2);
+      color: var(--green-dark);
       border-radius: 999px;
-      padding: 0.3rem 0.9rem;
+      padding: 0.35rem 1.05rem;
       font-size: 0.7rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.3rem;
       font-weight: 500;
     }
     .badge::before {
@@ -116,24 +118,25 @@
       display: inline-block;
     }
     h1 {
-      font-size: clamp(2.6rem, 4.2vw, 3.4rem);
-      line-height: 1.03;
+      font-size: clamp(3rem, 5vw, 3.7rem); /* <<< bigger hero text */
+      line-height: 1.02;
       letter-spacing: -0.04em;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.3rem;
     }
     p.lead {
       color: var(--muted);
       font-size: 1.02rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
       max-width: 540px;
     }
     .hero-cta {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      align-items: center;
     }
     .outline-link {
-      border: 1px solid var(--border);
+      border: 1px solid rgba(1,139,95,0.25);
       border-radius: 999px;
       padding: 0.55rem 1.3rem;
       text-decoration: none;
@@ -149,54 +152,54 @@
       justify-content: flex-end;
     }
     .hero-illustration {
-      max-width: 640px;       /* bigger */
+      max-width: 700px;       /* <<< BIGGER image */
       width: 100%;
       height: auto;
-      border-radius: 22px;
-      box-shadow: 0 30px 60px rgba(15,23,42,0.04);
+      border-radius: 26px;
+      box-shadow: 0 35px 80px rgba(15,23,42,0.05);
     }
 
     /* SECTIONS */
     .section {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4.5rem 1.25rem 0;
+      padding: 5rem 1.4rem 0;
     }
     .section h2 {
-      font-size: 1.7rem;
-      margin-bottom: 0.7rem;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
       letter-spacing: -0.01em;
     }
     .muted { color: var(--muted); }
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.1rem;
-      margin-top: 1.7rem;
-      margin-bottom: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.9rem;
+      margin-bottom: 1.7rem;
     }
     .card {
       background: #fff;
       border: 1px solid rgba(226,232,240,0.8);
       border-radius: 16px;
-      padding: 1.15rem 1.1rem 1.05rem;
+      padding: 1.25rem 1.25rem 1.1rem;
       box-shadow: 0 14px 35px rgba(15,23,42,0.02);
     }
 
     footer {
       max-width: var(--max);
       margin: 4.5rem auto 0;
-      padding: 2.5rem 1.25rem 4rem;
+      padding: 2.5rem 1.4rem 4rem;
       border-top: 1px solid rgba(226,232,240,0.7);
       font-size: .8rem;
       color: var(--muted);
     }
 
     /* MOBILE */
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .hero {
         grid-template-columns: 1fr;
-        padding-top: 3.5rem;
+        padding-top: 3.6rem;
       }
       .hero-cta {
         justify-content: flex-start;
@@ -208,7 +211,8 @@
         max-width: 100%;
       }
       .nav-links { display: none; }
-      .logo-img { height: 50px; }
+      .logo-img { height: 58px; }
+      body { font-size: 16px; } /* small safety */
     }
   </style>
 </head>
