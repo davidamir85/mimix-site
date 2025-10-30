@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mimix – AI-Native Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mimix turns process knowledge into working automations without RPA developers or BAs." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.1);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 14px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #162447 0%, #0f172a 30%, #020617 80%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(2, 6, 23, 0.6);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .logo-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle, var(--accent) 0%, #166534 75%);
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      color: #020617;
+      font-weight: 700;
+    }
+    .nav-links a {
+      color: var(--muted);
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .hero {
+      max-width: var(--max);
+      margin: 3.5rem auto 3rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.8rem;
+      padding: 0 1rem;
+      align-items: center;
+    }
+    .badge {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    p.lead {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .outline-link {
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.5);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.04);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+    .hero-panel {
+      display: grid;
+      gap: 1rem;
+    }
+    .section {
+      max-width: var(--max);
+      margin: 0 auto 3.4rem;
+      padding: 0 1rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .pill {
+      background: rgba(148, 163, 184, 0.08);
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      margin-right: 0.35rem;
+      margin-bottom: 0.35rem;
+      color: #e2e8f0;
+    }
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 1rem 4rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.06);
+    }
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+  <img src="WebsiteLogo.png" alt="Mimix Logo" style="height:32px; vertical-align:middle;">
+</div>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#product">Product</a>
+        <a href="#value">Value</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn-primary">Talk to us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">AI-native · No RPA Devs · Consultant-first</div>
+        <h1>Describe your process. Mimix builds the automation.</h1>
+        <p class="lead">
+          Mimix turns business-process knowledge into working automations without going through the usual RPA bottleneck.
+          Built for consultancies, operations teams, and service providers who want to deliver faster.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Request early access</a>
+          <a href="#product" class="outline-link">How it works →</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="card">
+          <strong>Current target:</strong> Accounting / contact-center / process-heavy orgs (400+ employees).
+        </div>
+        <div class="card">
+          <strong>What Mimix does:</strong><br />
+          1. Interviews the doer<br />
+          2. Maps the UI & systems<br />
+          3. Generates the automation<br />
+          4. Keeps it in sync
+        </div>
+        <div class="card">
+          <strong>Outcome:</strong> 50–70% less time on repetitive tasks, better quality, faster delivery.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <h2>The problem we’re solving</h2>
+      <p class="muted">
+        Traditional RPA assumes you already have a perfect process, documentation, and available developers. Real life isn’t like that.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Process is in people’s heads</h3>
+          <p class="muted">Stakeholders describe it differently. Mimix captures the real version from the actual doer.</p>
+        </div>
+        <div class="card">
+          <h3>RPA is a bottleneck</h3>
+          <p class="muted">You wait for a developer/BA. We remove that step.</p>
+        </div>
+        <div class="card">
+          <h3>Systems keep changing</h3>
+          <p class="muted">Mimix is built to re-align the automation with UI changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="product">
+      <h2>How Mimix works</h2>
+      <p class="muted">AI-native RPA: the agent interviews, documents, and builds.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Guided session</h3>
+          <p class="muted">The business user shows how the process is done. Mimix records steps, screens, fields, and rules.</p>
+        </div>
+        <div class="card">
+          <h3>2. AI builds the flow</h3>
+          <p class="muted">We generate the automation using your real UI, not theoretical BPMN.</p>
+        </div>
+        <div class="card">
+          <h3>3. Deploy & maintain</h3>
+          <p class="muted">Run it where work happens. Mimix updates it as things change.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="value">
+      <h2>Value</h2>
+      <p class="muted">What teams report when moving to AI-native automation:</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>50–70% faster delivery</h3>
+          <p class="muted">No queueing behind devs.</p>
+        </div>
+        <div class="card">
+          <h3>Higher adoption</h3>
+          <p class="muted">Ops teams can own their automations.</p>
+        </div>
+        <div class="card">
+          <h3>Lower cost per process</h3>
+          <p class="muted">Automate more of the “long tail.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Talk to Mimix</h2>
+      <p class="muted">Early design partners get hands-on support, process discovery, and access to the UI Agent.</p>
+      <div class="card">
+        <p>Email us at: <a href="mailto:info@mimix.biz">info@mimix.biz</a></p>
+        <p class="muted" style="margin-bottom: 0;">Tell us about your process bottleneck and team size, we’ll tell you if Mimix fits.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Mimix B.V. · AI-Native Automation · © 2025
+  </footer>
+</body>
+</html>
