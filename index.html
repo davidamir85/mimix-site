@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mimix – AI-Native Automation</title>
+  <title>Mimix – AI Process Understanding Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mimix turns process knowledge into working automations without RPA developers or BAs." />
+  <meta name="description" content="Mimix uses AI to interview people, capture how work is actually done, and produce a single, aligned version of the process. Start with one process, buy after you see the value." />
   <style>
     :root {
       --bg: #0f172a;
@@ -39,6 +39,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.7rem 1rem;
+      gap: 1rem;
     }
     .logo {
       display: flex;
@@ -47,16 +48,12 @@
       font-weight: 600;
       letter-spacing: 0.03em;
     }
-    .logo-badge {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: radial-gradient(circle, var(--accent) 0%, #166534 75%);
-      display: grid;
-      place-items: center;
-      font-size: 0.7rem;
-      color: #020617;
-      font-weight: 700;
+    /* if you uploaded mimix-logo.png */
+    .logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+      object-fit: contain;
     }
     .nav-links a {
       color: var(--muted);
@@ -75,6 +72,8 @@
       border: none;
       font-weight: 600;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
     .hero {
       max-width: var(--max);
@@ -151,16 +150,6 @@
       gap: 1.2rem;
       margin-top: 1.5rem;
     }
-    .pill {
-      background: rgba(148, 163, 184, 0.08);
-      display: inline-block;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      margin-right: 0.35rem;
-      margin-bottom: 0.35rem;
-      color: #e2e8f0;
-    }
     footer {
       max-width: var(--max);
       margin: 0 auto;
@@ -176,6 +165,9 @@
       .nav-links {
         display: none;
       }
+      .hero {
+        margin-top: 2.4rem;
+      }
     }
   </style>
 </head>
@@ -183,120 +175,85 @@
   <header>
     <div class="nav">
       <div class="logo">
-  <img src="WebsiteLogo.png" alt="Mimix Logo" style="height:32px; vertical-align:middle;">
-</div>
+        <!-- replace with your uploaded logo name -->
+        <img src="mimix-logo.png" alt="Mimix Logo" class="logo-img">
+      </div>
       <div class="nav-links">
         <a href="#problem">Problem</a>
-        <a href="#product">Product</a>
-        <a href="#value">Value</a>
-        <a href="#contact">Contact</a>
+        <a href="#how">How it works</a>
+        <a href="#why">Why now</a>
+        <a href="#contact">Start</a>
       </div>
-      <a href="#contact" class="btn-primary">Talk to us</a>
+      <a href="#contact" class="btn-primary">Map one process</a>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="badge">AI-native · No RPA Devs · Consultant-first</div>
-        <h1>Describe your process. Mimix builds the automation.</h1>
+        <div class="badge">AI process interviewer · Process analysis · Single source of truth</div>
+        <h1>AI that interviews, understands, and maps how work really happens.</h1>
         <p class="lead">
-          Mimix turns business-process knowledge into working automations without going through the usual RPA bottleneck.
-          Built for consultancies, operations teams, and service providers who want to deliver faster.
+          Mimix captures the truth of your processes directly from the people doing the work — compares different versions, and gives you an aligned, structured process you can optimise or automate later.
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="btn-primary">Request early access</a>
-          <a href="#product" class="outline-link">How it works →</a>
+          <a href="#contact" class="btn-primary">Map one process first</a>
+          <a href="#how" class="outline-link">How Mimix works →</a>
         </div>
       </div>
       <div class="hero-panel">
         <div class="card">
-          <strong>Current target:</strong> Accounting / contact-center / process-heavy orgs (400+ employees).
+          <strong>Who uses Mimix:</strong><br>
+          PMs, process improvement managers, ops leaders, and consultancies who need to document fast and get to the truth.
         </div>
         <div class="card">
-          <strong>What Mimix does:</strong><br />
-          1. Interviews the doer<br />
-          2. Maps the UI & systems<br />
-          3. Generates the automation<br />
-          4. Keeps it in sync
+          <strong>What you get:</strong><br>
+          A consistent, AI-generated process description: as-is, to-be, gaps, KPIs, systems.
         </div>
         <div class="card">
-          <strong>Outcome:</strong> 50–70% less time on repetitive tasks, better quality, faster delivery.
+          <strong>How we sell:</strong><br>
+          Start with one process. Only continue if you see the value.
         </div>
       </div>
     </section>
 
+    <!-- PROBLEM -->
     <section class="section" id="problem">
-      <h2>The problem we’re solving</h2>
+      <h2>The problem isn’t tech — it’s not knowing how things are done.</h2>
       <p class="muted">
-        Traditional RPA assumes you already have a perfect process, documentation, and available developers. Real life isn’t like that.
+        Knowledge is trapped in people’s heads. The same process runs differently in different teams.
+        Documentation is outdated, workshops take weeks, and system logs never tell the human part of the story.
+        You can’t optimise, automate, or “do AI” if you don’t first agree on how work actually happens.
       </p>
       <div class="grid-3">
         <div class="card">
-          <h3>Process is in people’s heads</h3>
-          <p class="muted">Stakeholders describe it differently. Mimix captures the real version from the actual doer.</p>
+          <h3>Multiple truths</h3>
+          <p class="muted">Finance does it one way, ops another, the consultant a third. Mimix reconciles them.</p>
         </div>
         <div class="card">
-          <h3>RPA is a bottleneck</h3>
-          <p class="muted">You wait for a developer/BA. We remove that step.</p>
+          <h3>Manual discovery is slow</h3>
+          <p class="muted">Endless interviews and workshops don’t scale. AI-guided interviews do.</p>
         </div>
         <div class="card">
-          <h3>Systems keep changing</h3>
-          <p class="muted">Mimix is built to re-align the automation with UI changes.</p>
+          <h3>Systems ≠ reality</h3>
+          <p class="muted">Process mining sees system events, not human judgement. Mimix captures the human layer.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="product">
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
       <h2>How Mimix works</h2>
-      <p class="muted">AI-native RPA: the agent interviews, documents, and builds.</p>
+      <p class="muted">AI-powered interview and analysis that always produces a usable, consistent outcome.</p>
       <div class="grid-3">
         <div class="card">
-          <h3>1. Guided session</h3>
-          <p class="muted">The business user shows how the process is done. Mimix records steps, screens, fields, and rules.</p>
+          <h3>1. Interview the doer</h3>
+          <p class="muted">Mimix guides the conversation, asks follow-ups, and captures inputs, outputs, roles, KPIs, and exceptions in real time.</p>
         </div>
         <div class="card">
-          <h3>2. AI builds the flow</h3>
-          <p class="muted">We generate the automation using your real UI, not theoretical BPMN.</p>
+          <h3>2. Compare and align</h3>
+          <p class="muted">Interview multiple people about the same process. Mimix spots gaps and differences, and builds a single version of the truth.</p>
         </div>
         <div class="card">
-          <h3>3. Deploy & maintain</h3>
-          <p class="muted">Run it where work happens. Mimix updates it as things change.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="value">
-      <h2>Value</h2>
-      <p class="muted">What teams report when moving to AI-native automation:</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>50–70% faster delivery</h3>
-          <p class="muted">No queueing behind devs.</p>
-        </div>
-        <div class="card">
-          <h3>Higher adoption</h3>
-          <p class="muted">Ops teams can own their automations.</p>
-        </div>
-        <div class="card">
-          <h3>Lower cost per process</h3>
-          <p class="muted">Automate more of the “long tail.”</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <h2>Talk to Mimix</h2>
-      <p class="muted">Early design partners get hands-on support, process discovery, and access to the UI Agent.</p>
-      <div class="card">
-        <p>Email us at: <a href="mailto:info@mimix.biz">info@mimix.biz</a></p>
-        <p class="muted" style="margin-bottom: 0;">Tell us about your process bottleneck and team size, we’ll tell you if Mimix fits.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Mimix B.V. · AI-Native Automation · © 2025
-  </footer>
-</body>
-</html>
+          <h3>3. Prod
