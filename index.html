@@ -334,6 +334,136 @@
     left: 1rem;
   }
 }
+/* light background band behind the section */
+.section--band {
+  background: radial-gradient(circle at top, rgba(1,139,95,0.07) 0%, rgba(255,255,255,1) 55%);
+  border-radius: 32px;
+  padding-bottom: 5.5rem;
+}
+
+/* base layout (what we already had) */
+.mimix-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.2rem;
+}
+
+.mimix-line {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(1,139,95,0.16);
+  z-index: 0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+/* animated dot running on the line */
+.mimix-dot {
+  position: absolute;
+  top: -4px;
+  left: -6%;
+  width: 12px;
+  height: 12px;
+  background: #018b5f;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  animation: run-line 6s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(1,139,95,0.6);
+}
+
+@keyframes run-line {
+  0%   { left: -6%; opacity: 0; }
+  5%   { opacity: 1; }
+  50%  { left: 48%; opacity: 1; }
+  95%  { opacity: 1; }
+  100% { left: 104%; opacity: 0; }
+}
+
+/* card look */
+.mimix-step {
+  background: #fff;
+  border: 1px solid rgba(226,232,240,0.7);
+  border-radius: 16px;
+  padding: 3.2rem 1.1rem 1.1rem;
+  box-shadow: 0 14px 35px rgba(15,23,42,0.03);
+  position: relative;
+  z-index: 1;
+  min-height: 190px;
+  opacity: 0;                 /* start hidden */
+  transform: translateY(18px);/* start slightly down */
+  animation: fade-up 0.6s ease forwards;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* stagger the steps */
+.anim-step-1 { animation-delay: 0.1s; }
+.anim-step-2 { animation-delay: 0.25s; }
+.anim-step-3 { animation-delay: 0.4s; }
+.anim-step-4 { animation-delay: 0.55s; }
+.anim-step-5 { animation-delay: 0.7s; }
+
+.mimix-step h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.02rem;
+}
+
+.mimix-step p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.step-icon {
+  position: absolute;
+  top: -20px;
+  left: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #fff;
+  border: 3px solid #018b5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #0f172a;
+  box-shadow: 0 10px 25px rgba(1,139,95,0.25);
+}
+
+.step-1 { border-color: #018b5f; }
+.step-2 { border-color: #0f766e; }
+.step-3 { border-color: #f97316; }
+.step-4 { border-color: #2563eb; }
+.step-5 { border-color: #f5c400; }
+
+/* mobile */
+@media (max-width: 980px) {
+  .mimix-steps {
+    grid-template-columns: 1fr;
+  }
+  .mimix-line {
+    display: none;
+  }
+  .mimix-step {
+    padding-left: 4.1rem;
+  }
+  .step-icon {
+    left: 1rem;
+  }
+  .section--band {
+    border-radius: 0;
+  }
+}
 
   </style>
 </head>
@@ -415,46 +545,49 @@
     </section>
 
     <!-- HOW -->
-   <section class="section" id="how">
+   <section class="section section--band" id="how">
   <h2>How Mimix works</h2>
   <p class="muted" style="max-width: 620px;">
     One guided interview becomes a complete, aligned process. Then you can actually decide what to automate.
   </p>
 
   <div class="mimix-steps">
-    <div class="mimix-line" aria-hidden="true"></div>
+    <div class="mimix-line" aria-hidden="true">
+      <span class="mimix-dot"></span>
+    </div>
 
-    <div class="mimix-step">
+    <div class="mimix-step anim-step-1">
       <div class="step-icon step-1">1</div>
       <h3>AI interviews the doer</h3>
       <p>Real-time prompts capture inputs, outputs, roles, systems, and exceptions — like a senior BA in the room.</p>
     </div>
 
-    <div class="mimix-step">
+    <div class="mimix-step anim-step-2">
       <div class="step-icon step-2">2</div>
       <h3>Compare & align</h3>
       <p>Mimix takes multiple interviews on the same process, finds gaps and contradictions, and builds one truth.</p>
     </div>
 
-    <div class="mimix-step">
+    <div class="mimix-step anim-step-3">
       <div class="step-icon step-3">3</div>
       <h3>Add other signals</h3>
       <p>Training docs, dashboards, customer feedback — used as context to complete the picture.</p>
     </div>
 
-    <div class="mimix-step">
+    <div class="mimix-step anim-step-4">
       <div class="step-icon step-4">4</div>
       <h3>See the real as-is</h3>
       <p>You get a structured, human-readable process: who, what, in which system, and where it breaks.</p>
     </div>
 
-    <div class="mimix-step">
+    <div class="mimix-step anim-step-5">
       <div class="step-icon step-5">5</div>
       <h3>Plan the to-be</h3>
       <p>Now it’s safe to talk AI, RPA, system change, or training — because everyone sees the same process.</p>
     </div>
   </div>
 </section>
+
 
     <!-- START -->
     <section class="section" id="start">
