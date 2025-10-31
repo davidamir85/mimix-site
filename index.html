@@ -582,6 +582,19 @@
   margin-bottom: 0.4rem;
   color: var(--muted);
 }
+.founder-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid rgba(1,139,95,0.4);
+  box-shadow: 0 8px 22px rgba(1,139,95,0.12);
+  transition: transform 0.3s ease;
+}
+.founder-card:hover .founder-photo {
+  transform: scale(1.05);
+}
 
   </style>
 </head>
@@ -715,35 +728,39 @@
   </p>
 
   <div class="about-founders">
-    <div class="founder-card">
-      <h3>Eric Shellef</h3>
-      <p class="role">CEO &amp; Co-founder</p>
-      <p>
-        Co-founder of Verbit (valued at $2B) and Fintastic. Eric is a veteran AI systems architect with deep experience
-        in scaling data-driven platforms and leading cross-disciplinary teams from concept to global impact.
-      </p>
-      <a href="https://www.linkedin.com/in/eric-shellef/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-    </div>
-
-    <div class="founder-card">
-      <h3>Coby Sternlicht</h3>
-      <p class="role">CTO &amp; Co-founder</p>
-      <p>
-        Former VP of R&amp;D at BlueVine and innovation lead at Citibank, Coby brings deep enterprise technology and product expertise.
-        He focuses on building systems that bridge the gap between AI ambition and operational reality.
-      </p>
-      <a href="https://www.linkedin.com/in/cobysternlicht/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-    </div>
-
-    <div class="founder-card stealth">
-      <h3>David </h3>
-      <p class="role">CBO &amp; Co-founder</p>
-      <p>
-        Veteran automation strategist and founder of one of the earliest global RPA consultancies.
-        A driving force behind Mimix’s commercial strategy and product vision.
-      </p>
-    </div>
+  <div class="founder-card">
+    <img src="eric.png" alt="Eric Shellef" class="founder-photo">
+    <h3>Eric Shellef</h3>
+    <p class="role">CEO &amp; Co-founder</p>
+    <p>
+      Co-founder of Verbit (valued at $2B) and Fintastic. Eric is a veteran AI systems architect with deep experience
+      in scaling data-driven platforms and leading cross-disciplinary teams from concept to global impact.
+    </p>
+    <a href="https://www.linkedin.com/in/eric-shellef/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
   </div>
+
+  <div class="founder-card">
+    <img src="coby.png" alt="Coby Sternlicht" class="founder-photo">
+    <h3>Coby Sternlicht</h3>
+    <p class="role">CTO &amp; Co-founder</p>
+    <p>
+      Former VP of R&amp;D at BlueVine and innovation lead at Citibank, Coby brings deep enterprise technology and product expertise.
+      He focuses on building systems that bridge the gap between AI ambition and operational reality.
+    </p>
+    <a href="https://www.linkedin.com/in/cobysternlicht/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+  </div>
+
+  <div class="founder-card stealth">
+    <img src="stealth.png" alt="Stealth Co-founder" class="founder-photo">
+    <h3>David Amir</h3>
+    <p class="role">CBO &amp; Co-founder</p>
+    <p>
+      Veteran automation strategist and founder of one of the earliest global RPA consultancies.
+      A driving force behind Mimix’s commercial strategy and product vision.
+    </p>
+  </div>
+</div>
+
 
   <div class="about-core">
     <div>
