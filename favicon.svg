@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- green background -->
+  <rect width="64" height="64" rx="14" ry="14" fill="#018b5f"/>
+  <!-- white "m" -->
+  <path d="M18 42 V23 a3 3 0 0 1 6 0 v6.5 a3.5 3.5 0 0 0 7 0 V23 a3 3 0 0 1 6 0 v9.5 a7.5 7.5 0 0 1-15 0 V30 a3.5 3.5 0 0 0-7 0v12z"
+        fill="#ffffff"/>
+  <!-- yellow dot -->
+  <circle cx="45" cy="18" r="4" fill="#f5c400"/>
+</svg>
