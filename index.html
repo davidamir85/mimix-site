@@ -502,6 +502,87 @@
   text-decoration: underline;
 }
 
+.section--cta h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  animation: pulse-text 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+  0%, 100% { text-shadow: 0 0 0px rgba(255,255,255,0.0); transform: scale(1); }
+  50% { text-shadow: 0 0 16px rgba(255,255,255,0.5); transform: scale(1.02); }
+}
+
+/* ABOUT SECTION */
+.section--about {
+  background: #fafdfc;
+  border-radius: 32px;
+  padding-bottom: 6rem;
+  margin-top: 5rem;
+}
+
+.about-founders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.founder-card {
+  background: #fff;
+  border: 1px solid rgba(226,232,240,0.8);
+  border-radius: 16px;
+  padding: 1.6rem 1.5rem 1.3rem;
+  box-shadow: 0 14px 35px rgba(15,23,42,0.03);
+}
+
+.founder-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.founder-card .role {
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 0.6rem;
+}
+
+.founder-card a {
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+.founder-card a:hover {
+  text-decoration: underline;
+}
+
+/* hide any personal details or extra links if stealth */
+.founder-card.stealth a {
+  display: none;
+}
+
+/* mission / values */
+.about-core {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.about-core h4 {
+  margin-bottom: 0.5rem;
+  color: var(--green-dark);
+}
+.about-core ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.about-core li {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
   </style>
 </head>
 <body>
@@ -625,6 +706,68 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="section section--about" id="about">
+  <h2>About Mimix</h2>
+  <p class="muted" style="max-width: 720px;">
+    Mimix was founded by a team of AI and automation experts driven by one purpose — to make change actually happen.
+    We build technology that lets leaders *see* how their business truly runs, align their people, and act with confidence.
+  </p>
+
+  <div class="about-founders">
+    <div class="founder-card">
+      <h3>Eric Shellef</h3>
+      <p class="role">CEO &amp; Co-founder</p>
+      <p>
+        Co-founder of Verbit (valued at $2B) and Fintastic. Eric is a veteran AI systems architect with deep experience
+        in scaling data-driven platforms and leading cross-disciplinary teams from concept to global impact.
+      </p>
+      <a href="https://www.linkedin.com/in/eric-shellef/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+    </div>
+
+    <div class="founder-card">
+      <h3>Coby Sternlicht</h3>
+      <p class="role">CTO &amp; Co-founder</p>
+      <p>
+        Former VP of R&amp;D at BlueVine and innovation lead at Citibank, Coby brings deep enterprise technology and product expertise.
+        He focuses on building systems that bridge the gap between AI ambition and operational reality.
+      </p>
+      <a href="https://www.linkedin.com/in/cobysternlicht/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+    </div>
+
+    <div class="founder-card stealth">
+      <h3>David </h3>
+      <p class="role">CBO &amp; Co-founder</p>
+      <p>
+        Veteran automation strategist and founder of one of the earliest global RPA consultancies.
+        A driving force behind Mimix’s commercial strategy and product vision.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-core">
+    <div>
+      <h4>Vision</h4>
+      <p>Make change happen. Empower leaders to see what their business is really doing and unite their organization around truth and action.</p>
+    </div>
+
+    <div>
+      <h4>Mission</h4>
+      <p>To create a living value map of every organization — connecting processes, people, and systems — and drive change through a global ecosystem of intelligent solutions.</p>
+    </div>
+
+    <div>
+      <h4>Values</h4>
+      <ul>
+        <li><strong>Resourcefulness:</strong> Do what it takes to achieve the goal.</li>
+        <li><strong>Extreme Ownership</strong> and <strong>Integrity</strong> in every action.</li>
+        <li><strong>Win Together:</strong> Collaboration inside and outside the company.</li>
+        <li><strong>Expand the Possible:</strong> Challenge norms and innovate boldly.</li>
+        <li><strong>Empathic Listening:</strong> Understand before acting.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <!-- START -->
     <section class="section section--cta" id="start">
